@@ -1,0 +1,1289 @@
+PS C:\Users\lee\Desktop\lxyyfantasy最终版(对内)in-bendilianjie-android-23399> tree /F
+卷 Local Disk 的文件夹 PATH 列表
+卷序列号为 E2FD-C8B6
+C:.
+│  .gitattributes
+│  .gitignore
+│  .gitmodules
+│  build.py
+│  build.rs
+│  Cargo.lock
+│  Cargo.toml
+│  CLAUDE.md
+│  Dockerfile
+│  entrypoint.sh
+│  LICENCE
+│  README.md
+│  vcpkg.json
+│
+├─.cargo
+│      config.toml
+│
+├─.github
+│  │  dependabot.yml
+│  │  FUNDING.yml
+│  │
+│  ├─ISSUE_TEMPLATE
+│  │      bug_report.yaml
+│  │      config.yml
+│  │
+│  ├─patches
+│  │      flutter_3.24.4_dropdown_menu_enableFilter.diff
+│  │
+│  └─workflows
+│          bridge.yml
+│          ci.yml
+│          clear-cache.yml
+│          fdroid.yml
+│          flutter-build.yml
+│          flutter-ci.yml
+│          flutter-nightly.yml
+│          flutter-tag.yml
+│          playground.yml
+│          third-party-RustDeskTempTopMostWindow.yml
+│          winget.yml
+│
+├─appimage
+│      AppImageBuilder-aarch64.yml
+│      AppImageBuilder-x86_64.yml
+│
+├─docs
+│      CODE_OF_CONDUCT-DE.md
+│      CODE_OF_CONDUCT-JP.md
+│      CODE_OF_CONDUCT-KR.md
+│      CODE_OF_CONDUCT-NL.md
+│      CODE_OF_CONDUCT-NO.md
+│      CODE_OF_CONDUCT-PL.md
+│      CODE_OF_CONDUCT-RO.md
+│      CODE_OF_CONDUCT-RU.md
+│      CODE_OF_CONDUCT-TR.md
+│      CODE_OF_CONDUCT-ZH.md
+│      CODE_OF_CONDUCT.md
+│      CONTRIBUTING-DE.md
+│      CONTRIBUTING-ID.md
+│      CONTRIBUTING-IT.md
+│      CONTRIBUTING-JP.md
+│      CONTRIBUTING-KR.md
+│      CONTRIBUTING-NL.md
+│      CONTRIBUTING-NO.md
+│      CONTRIBUTING-PL.md
+│      CONTRIBUTING-RO.md
+│      CONTRIBUTING-RU.md
+│      CONTRIBUTING-TR.md
+│      CONTRIBUTING-ZH.md
+│      CONTRIBUTING.md
+│      README-AR.md
+│      README-CS.md
+│      README-DA.md
+│      README-DE.md
+│      README-EO.md
+│      README-ES.md
+│      README-FA.md
+│      README-FI.md
+│      README-FR.md
+│      README-GR.md
+│      README-HU.md
+│      README-ID.md
+│      README-IT.md
+│      README-JP.md
+│      README-KR.md
+│      README-ML.md
+│      README-NL.md
+│      README-NO.md
+│      README-PL.md
+│      README-PTBR.md
+│      README-RO.md
+│      README-RU.md
+│      README-TR.md
+│      README-UA.md
+│      README-VN.md
+│      README-ZH.md
+│      SECURITY-DE.md
+│      SECURITY-IT.md
+│      SECURITY-JP.md
+│      SECURITY-KR.md
+│      SECURITY-NL.md
+│      SECURITY-NO.md
+│      SECURITY-PL.md
+│      SECURITY-RO.md
+│      SECURITY-TR.md
+│      SECURITY.md
+│
+├─examples
+│      ipc.rs
+│
+├─fastlane
+│  └─metadata
+│      └─android
+│          ├─en-US
+│          │  │  full_description.txt
+│          │  │  short_description.txt
+│          │  │
+│          │  └─images
+│          │      │  icon.png
+│          │      │
+│          │      ├─phoneScreenshots
+│          │      │      1.png
+│          │      │      2.png
+│          │      │      3.png
+│          │      │      4.png
+│          │      │
+│          │      └─sevenInchScreenshots
+│          │              5.png
+│          │              6.png
+│          │              7.png
+│          │              8.png
+│          │
+│          ├─fr-FR
+│          │      full_description.txt
+│          │      short_description.txt
+│          │
+│          ├─nl-NL
+│          │      full_description.txt
+│          │      short_description.txt
+│          │
+│          └─zh-CN
+│                  full_description.txt
+│                  short_description.txt
+│
+├─flatpak
+│      com.rustdesk.RustDesk.metainfo.xml
+│      rustdesk.json
+│
+├─flutter
+│  │  .gitattributes
+│  │  .gitignore
+│  │  .metadata
+│  │  analysis_options.yaml
+│  │  build_android.sh
+│  │  build_android_deps.sh
+│  │  build_fdroid.sh
+│  │  build_ios.sh
+│  │  ios_arm64.sh
+│  │  ios_x64.sh
+│  │  ndk_arm.sh
+│  │  ndk_arm64.sh
+│  │  ndk_x64.sh
+│  │  ndk_x86.sh
+│  │  pubspec.lock
+│  │  pubspec.yaml
+│  │  README.md
+│  │  run.sh
+│  │
+│  ├─android
+│  │  │  .gitignore
+│  │  │  build.gradle
+│  │  │  gradle.properties
+│  │  │  settings.gradle
+│  │  │
+│  │  ├─app
+│  │  │  │  build.gradle
+│  │  │  │  proguard-rules
+│  │  │  │
+│  │  │  └─src
+│  │  │      ├─debug
+│  │  │      │      AndroidManifest.xml
+│  │  │      │
+│  │  │      ├─main
+│  │  │      │  │  AndroidManifest.xml
+│  │  │      │  │
+│  │  │      │  ├─kotlin
+│  │  │      │  │  │  ffi.kt
+│  │  │      │  │  │
+│  │  │      │  │  └─com
+│  │  │      │  │      └─tool
+│  │  │      │  │          └─devbox
+│  │  │      │  │                  AudioRecordHandle.kt
+│  │  │      │  │                  BootReceiver.kt
+│  │  │      │  │                  common.kt
+│  │  │      │  │                  FloatingWindowService.kt
+│  │  │      │  │                  InputService.kt
+│  │  │      │  │                  KeyboardKeyEventMapper.kt
+│  │  │      │  │                  MainActivity.kt
+│  │  │      │  │                  MainApplication.kt
+│  │  │      │  │                  MainService.kt
+│  │  │      │  │                  PermissionRequestTransparentActivity.kt
+│  │  │      │  │                  RdClipboardManager.kt
+│  │  │      │  │                  VolumeController.kt
+│  │  │      │  │
+│  │  │      │  └─res
+│  │  │      │      ├─drawable
+│  │  │      │      │      check_blue.xml
+│  │  │      │      │      close_red.xml
+│  │  │      │      │      floating_window.xml
+│  │  │      │      │      launch_background.xml
+│  │  │      │      │
+│  │  │      │      ├─drawable-v21
+│  │  │      │      │      launch_background.xml
+│  │  │      │      │
+│  │  │      │      ├─mipmap-anydpi-v26
+│  │  │      │      │      ic_launcher.xml
+│  │  │      │      │      ic_launcher_round.xml
+│  │  │      │      │
+│  │  │      │      ├─mipmap-hdpi
+│  │  │      │      │      ic_launcher.png
+│  │  │      │      │      ic_launcher_foreground.png
+│  │  │      │      │      ic_launcher_round.png
+│  │  │      │      │      ic_stat_logo.png
+│  │  │      │      │
+│  │  │      │      ├─mipmap-mdpi
+│  │  │      │      │      ic_launcher.png
+│  │  │      │      │      ic_launcher_foreground.png
+│  │  │      │      │      ic_launcher_round.png
+│  │  │      │      │      ic_stat_logo.png
+│  │  │      │      │
+│  │  │      │      ├─mipmap-xhdpi
+│  │  │      │      │      ic_launcher.png
+│  │  │      │      │      ic_launcher_foreground.png
+│  │  │      │      │      ic_launcher_round.png
+│  │  │      │      │      ic_stat_logo.png
+│  │  │      │      │
+│  │  │      │      ├─mipmap-xxhdpi
+│  │  │      │      │      ic_launcher.png
+│  │  │      │      │      ic_launcher_foreground.png
+│  │  │      │      │      ic_launcher_round.png
+│  │  │      │      │      ic_stat_logo.png
+│  │  │      │      │
+│  │  │      │      ├─mipmap-xxxhdpi
+│  │  │      │      │      ic_launcher.png
+│  │  │      │      │      ic_launcher_foreground.png
+│  │  │      │      │      ic_launcher_round.png
+│  │  │      │      │      ic_stat_logo.png
+│  │  │      │      │
+│  │  │      │      ├─values
+│  │  │      │      │      colors.xml
+│  │  │      │      │      ic_launcher_background.xml
+│  │  │      │      │      strings.xml
+│  │  │      │      │      styles.xml
+│  │  │      │      │
+│  │  │      │      ├─values-night
+│  │  │      │      │      styles.xml
+│  │  │      │      │
+│  │  │      │      └─xml
+│  │  │      │              accessibility_service_config.xml
+│  │  │      │
+│  │  │      └─profile
+│  │  │              AndroidManifest.xml
+│  │  │
+│  │  └─gradle
+│  │      └─wrapper
+│  │              gradle-wrapper.properties
+│  │
+│  ├─assets
+│  │      actions.svg
+│  │      actions_mobile.svg
+│  │      address_book.ttf
+│  │      android.svg
+│  │      arrow.svg
+│  │      auth-apple.svg
+│  │      auth-auth0.svg
+│  │      auth-azure.svg
+│  │      auth-default.svg
+│  │      auth-facebook.svg
+│  │      auth-github.svg
+│  │      auth-gitlab.svg
+│  │      auth-google.svg
+│  │      auth-okta.svg
+│  │      call_end.svg
+│  │      call_wait.svg
+│  │      chat.svg
+│  │      chat2.svg
+│  │      checkbox-outline.svg
+│  │      chevron_up_chevron_down.svg
+│  │      close.svg
+│  │      device_group.ttf
+│  │      display.svg
+│  │      dots.svg
+│  │      file.svg
+│  │      file_transfer.svg
+│  │      folder.svg
+│  │      folder_new.svg
+│  │      fullscreen.svg
+│  │      fullscreen_exit.svg
+│  │      gestures.ttf
+│  │      home.svg
+│  │      icon.svg
+│  │      insecure.svg
+│  │      insecure_relay.svg
+│  │      kb_layout_iso.svg
+│  │      kb_layout_not_iso.svg
+│  │      keyboard_mouse.svg
+│  │      linux.svg
+│  │      mac.svg
+│  │      message_24dp_5F6368.svg
+│  │      more.ttf
+│  │      peer_searchbar.ttf
+│  │      pinned.svg
+│  │      rec.svg
+│  │      record_screen.svg
+│  │      refresh.svg
+│  │      scam.png
+│  │      screen.svg
+│  │      search.svg
+│  │      secure.svg
+│  │      secure_relay.svg
+│  │      tabbar.ttf
+│  │      transfer.svg
+│  │      trash.svg
+│  │      unpinned.svg
+│  │      voice_call.svg
+│  │      voice_call_waiting.svg
+│  │      win.svg
+│  │
+│  ├─ios
+│  │  │  .gitignore
+│  │  │  exportOptions.plist
+│  │  │  Podfile
+│  │  │  Podfile.lock
+│  │  │
+│  │  ├─Flutter
+│  │  │      AppFrameworkInfo.plist
+│  │  │      Debug.xcconfig
+│  │  │      Release.xcconfig
+│  │  │
+│  │  ├─Runner
+│  │  │  │  AppDelegate.swift
+│  │  │  │  GoogleService-Info.plist
+│  │  │  │  Info.plist
+│  │  │  │  Runner-Bridging-Header.h
+│  │  │  │  Runner.entitlements
+│  │  │  │
+│  │  │  ├─Assets.xcassets
+│  │  │  │  ├─AppIcon.appiconset
+│  │  │  │  │      Contents.json
+│  │  │  │  │      Icon-App-1024x1024@1x.png
+│  │  │  │  │      Icon-App-20x20@1x.png
+│  │  │  │  │      Icon-App-20x20@2x.png
+│  │  │  │  │      Icon-App-20x20@3x.png
+│  │  │  │  │      Icon-App-29x29@1x.png
+│  │  │  │  │      Icon-App-29x29@2x.png
+│  │  │  │  │      Icon-App-29x29@3x.png
+│  │  │  │  │      Icon-App-40x40@1x.png
+│  │  │  │  │      Icon-App-40x40@2x.png
+│  │  │  │  │      Icon-App-40x40@3x.png
+│  │  │  │  │      Icon-App-60x60@2x.png
+│  │  │  │  │      Icon-App-60x60@3x.png
+│  │  │  │  │      Icon-App-76x76@1x.png
+│  │  │  │  │      Icon-App-76x76@2x.png
+│  │  │  │  │      Icon-App-83.5x83.5@2x.png
+│  │  │  │  │
+│  │  │  │  └─LaunchImage.imageset
+│  │  │  │          Contents.json
+│  │  │  │          LaunchImage.png
+│  │  │  │          LaunchImage@2x.png
+│  │  │  │          LaunchImage@3x.png
+│  │  │  │          README.md
+│  │  │  │
+│  │  │  └─Base.lproj
+│  │  │          LaunchScreen.storyboard
+│  │  │          Main.storyboard
+│  │  │
+│  │  ├─Runner.xcodeproj
+│  │  │  │  project.pbxproj
+│  │  │  │
+│  │  │  ├─project.xcworkspace
+│  │  │  │  │  contents.xcworkspacedata
+│  │  │  │  │
+│  │  │  │  └─xcshareddata
+│  │  │  │          IDEWorkspaceChecks.plist
+│  │  │  │          WorkspaceSettings.xcsettings
+│  │  │  │
+│  │  │  └─xcshareddata
+│  │  │      └─xcschemes
+│  │  │              Runner.xcscheme
+│  │  │
+│  │  └─Runner.xcworkspace
+│  │      │  contents.xcworkspacedata
+│  │      │
+│  │      └─xcshareddata
+│  │              IDEWorkspaceChecks.plist
+│  │              WorkspaceSettings.xcsettings
+│  │
+│  ├─lib
+│  │  │  common.dart
+│  │  │  consts.dart
+│  │  │  generated_bridge.dart
+│  │  │  main.dart
+│  │  │
+│  │  ├─common
+│  │  │  │  shared_state.dart
+│  │  │  │
+│  │  │  ├─formatter
+│  │  │  │      id_formatter.dart
+│  │  │  │
+│  │  │  ├─hbbs
+│  │  │  │      hbbs.dart
+│  │  │  │
+│  │  │  └─widgets
+│  │  │          address_book.dart
+│  │  │          animated_rotation_widget.dart
+│  │  │          audio_input.dart
+│  │  │          autocomplete.dart
+│  │  │          chat_page.dart
+│  │  │          connection_page_title.dart
+│  │  │          custom_password.dart
+│  │  │          custom_scale_base.dart
+│  │  │          dialog.dart
+│  │  │          gestures.dart
+│  │  │          login.dart
+│  │  │          my_group.dart
+│  │  │          overlay.dart
+│  │  │          peers_view.dart
+│  │  │          peer_card.dart
+│  │  │          peer_tab_page.dart
+│  │  │          remote_input.dart
+│  │  │          setting_widgets.dart
+│  │  │          toolbar.dart
+│  │  │
+│  │  ├─desktop
+│  │  │  ├─pages
+│  │  │  │      connection_page.dart
+│  │  │  │      desktop_home_page.dart
+│  │  │  │      desktop_setting_page.dart
+│  │  │  │      desktop_tab_page.dart
+│  │  │  │      file_manager_page.dart
+│  │  │  │      file_manager_tab_page.dart
+│  │  │  │      install_page.dart
+│  │  │  │      port_forward_page.dart
+│  │  │  │      port_forward_tab_page.dart
+│  │  │  │      remote_page.dart
+│  │  │  │      remote_tab_page.dart
+│  │  │  │      server_page.dart
+│  │  │  │      terminal_connection_manager.dart
+│  │  │  │      terminal_page.dart
+│  │  │  │      terminal_tab_page.dart
+│  │  │  │      view_camera_page.dart
+│  │  │  │      view_camera_tab_page.dart
+│  │  │  │
+│  │  │  ├─screen
+│  │  │  │      desktop_file_transfer_screen.dart
+│  │  │  │      desktop_port_forward_screen.dart
+│  │  │  │      desktop_remote_screen.dart
+│  │  │  │      desktop_terminal_screen.dart
+│  │  │  │      desktop_view_camera_screen.dart
+│  │  │  │
+│  │  │  └─widgets
+│  │  │          button.dart
+│  │  │          dragable_divider.dart
+│  │  │          kb_layout_type_chooser.dart
+│  │  │          list_search_action_listener.dart
+│  │  │          material_mod_popup_menu.dart
+│  │  │          menu_button.dart
+│  │  │          popup_menu.dart
+│  │  │          refresh_wrapper.dart
+│  │  │          remote_toolbar.dart
+│  │  │          tabbar_widget.dart
+│  │  │          titlebar_widget.dart
+│  │  │          update_progress.dart
+│  │  │
+│  │  ├─mobile
+│  │  │  ├─pages
+│  │  │  │      connection_page.dart
+│  │  │  │      file_manager_page.dart
+│  │  │  │      home_page.dart
+│  │  │  │      remote_page.dart
+│  │  │  │      scan_page.dart
+│  │  │  │      server_page.dart
+│  │  │  │      settings_page.dart
+│  │  │  │      terminal_page.dart
+│  │  │  │      view_camera_page.dart
+│  │  │  │
+│  │  │  └─widgets
+│  │  │          custom_scale_widget.dart
+│  │  │          dialog.dart
+│  │  │          floating_mouse.dart
+│  │  │          floating_mouse_widgets.dart
+│  │  │          gesture_help.dart
+│  │  │
+│  │  ├─models
+│  │  │      ab_model.dart
+│  │  │      chat_model.dart
+│  │  │      cm_file_model.dart
+│  │  │      desktop_render_texture.dart
+│  │  │      file_model.dart
+│  │  │      group_model.dart
+│  │  │      input_model.dart
+│  │  │      model.dart
+│  │  │      native_model.dart
+│  │  │      peer_model.dart
+│  │  │      peer_tab_model.dart
+│  │  │      platform_model.dart
+│  │  │      printer_model.dart
+│  │  │      relative_mouse_model.dart
+│  │  │      server_model.dart
+│  │  │      state_model.dart
+│  │  │      terminal_model.dart
+│  │  │      user_model.dart
+│  │  │      web_model.dart
+│  │  │
+│  │  ├─native
+│  │  │      common.dart
+│  │  │      custom_cursor.dart
+│  │  │      win32.dart
+│  │  │
+│  │  ├─plugin
+│  │  │  │  common.dart
+│  │  │  │  event.dart
+│  │  │  │  handlers.dart
+│  │  │  │  manager.dart
+│  │  │  │  model.dart
+│  │  │  │  ui_manager.dart
+│  │  │  │
+│  │  │  ├─utils
+│  │  │  │      dialogs.dart
+│  │  │  │
+│  │  │  └─widgets
+│  │  │          desc_ui.dart
+│  │  │          desktop_settings.dart
+│  │  │
+│  │  ├─utils
+│  │  │      event_loop.dart
+│  │  │      http_service.dart
+│  │  │      image.dart
+│  │  │      multi_window_manager.dart
+│  │  │      platform_channel.dart
+│  │  │      relative_mouse_accumulator.dart
+│  │  │      scale.dart
+│  │  │
+│  │  └─web
+│  │      │  bridge.dart
+│  │      │  common.dart
+│  │      │  custom_cursor.dart
+│  │      │  dummy.dart
+│  │      │  settings_page.dart
+│  │      │  texture_rgba_renderer.dart
+│  │      │  web_unique.dart
+│  │      │  win32.dart
+│  │      │
+│  │      └─plugin
+│  │              handlers.dart
+│  │
+│  ├─linux
+│  │  │  .gitignore
+│  │  │  bump_mouse.cc
+│  │  │  bump_mouse.h
+│  │  │  bump_mouse_x11.cc
+│  │  │  bump_mouse_x11.h
+│  │  │  CMakeLists.txt
+│  │  │  main.cc
+│  │  │  my_application.cc
+│  │  │  my_application.h
+│  │  │  wayland_shortcuts_inhibit.cc
+│  │  │  wayland_shortcuts_inhibit.h
+│  │  │
+│  │  └─flutter
+│  │          CMakeLists.txt
+│  │
+│  ├─macos
+│  │  │  .gitignore
+│  │  │  Podfile
+│  │  │  Podfile.lock
+│  │  │
+│  │  ├─Flutter
+│  │  │      Flutter-Debug.xcconfig
+│  │  │      Flutter-Release.xcconfig
+│  │  │
+│  │  ├─Runner
+│  │  │  │  AppDelegate.swift
+│  │  │  │  AppIcon.icns
+│  │  │  │  DebugProfile.entitlements
+│  │  │  │  Info.plist
+│  │  │  │  MainFlutterWindow.swift
+│  │  │  │  Release.entitlements
+│  │  │  │
+│  │  │  ├─Base.lproj
+│  │  │  │      MainMenu.xib
+│  │  │  │
+│  │  │  └─Configs
+│  │  │          AppInfo.xcconfig
+│  │  │          Debug.xcconfig
+│  │  │          Release.xcconfig
+│  │  │          Warnings.xcconfig
+│  │  │
+│  │  ├─Runner.xcodeproj
+│  │  │  │  project.pbxproj
+│  │  │  │
+│  │  │  ├─project.xcworkspace
+│  │  │  │  └─xcshareddata
+│  │  │  │          IDEWorkspaceChecks.plist
+│  │  │  │
+│  │  │  └─xcshareddata
+│  │  │      └─xcschemes
+│  │  │              Runner.xcscheme
+│  │  │
+│  │  └─Runner.xcworkspace
+│  │      │  contents.xcworkspacedata
+│  │      │
+│  │      └─xcshareddata
+│  │              IDEWorkspaceChecks.plist
+│  │
+│  ├─test
+│  │      cm_test.dart
+│  │
+│  └─windows
+│      │  .gitignore
+│      │  CMakeLists.txt
+│      │
+│      ├─flutter
+│      │      CMakeLists.txt
+│      │
+│      └─runner
+│          │  app.ico
+│          │  CMakeLists.txt
+│          │  flutter_window.cpp
+│          │  flutter_window.h
+│          │  main.cpp
+│          │  resource.h
+│          │  runner.exe.manifest
+│          │  Runner.rc
+│          │  utils.cpp
+│          │  utils.h
+│          │  win32_desktop.cpp
+│          │  win32_desktop.h
+│          │  win32_window.cpp
+│          │  win32_window.h
+│          │
+│          └─resources
+│                  app.ico
+│                  app_icon.ico
+│
+├─libs
+│  ├─clipboard
+│  │  │  build.rs
+│  │  │  Cargo.toml
+│  │  │  README.md
+│  │  │
+│  │  ├─docs
+│  │  │  └─assets
+│  │  │          scene3.png
+│  │  │          win_A_B.png
+│  │  │          win_B_A.png
+│  │  │
+│  │  └─src
+│  │      │  cliprdr.h
+│  │      │  context_send.rs
+│  │      │  lib.rs
+│  │      │
+│  │      ├─platform
+│  │      │  │  mod.rs
+│  │      │  │  windows.rs
+│  │      │  │
+│  │      │  └─unix
+│  │      │      │  filetype.rs
+│  │      │      │  local_file.rs
+│  │      │      │  mod.rs
+│  │      │      │  serv_files.rs
+│  │      │      │
+│  │      │      ├─fuse
+│  │      │      │      cs.rs
+│  │      │      │      mod.rs
+│  │      │      │
+│  │      │      └─macos
+│  │      │              item_data_provider.rs
+│  │      │              mod.rs
+│  │      │              paste-files-macos.png
+│  │      │              pasteboard_context.rs
+│  │      │              paste_observer.rs
+│  │      │              paste_task.rs
+│  │      │              README.md
+│  │      │
+│  │      └─windows
+│  │              wf_cliprdr.c
+│  │
+│  ├─enigo
+│  │  │  .gitattributes
+│  │  │  .gitignore
+│  │  │  .travis.yml
+│  │  │  appveyor.yml
+│  │  │  build.rs
+│  │  │  Cargo.toml
+│  │  │  LICENSE
+│  │  │  README.md
+│  │  │  rustfmt.toml
+│  │  │
+│  │  ├─.github
+│  │  │  └─ISSUE_TEMPLATE
+│  │  │          bug_report.md
+│  │  │          feature_request.md
+│  │  │          question.md
+│  │  │
+│  │  ├─examples
+│  │  │      dsl.rs
+│  │  │      key.rs
+│  │  │      keyboard.rs
+│  │  │      mouse.rs
+│  │  │      timer.rs
+│  │  │
+│  │  └─src
+│  │      │  dsl.rs
+│  │      │  lib.rs
+│  │      │
+│  │      ├─linux
+│  │      │      mod.rs
+│  │      │      nix_impl.rs
+│  │      │      xdo.rs
+│  │      │
+│  │      ├─macos
+│  │      │      keycodes.rs
+│  │      │      macos_impl.rs
+│  │      │      mod.rs
+│  │      │
+│  │      └─win
+│  │              keycodes.rs
+│  │              mod.rs
+│  │              win_impl.rs
+│  │
+│  ├─hbb_common
+│  │  │  .gitignore
+│  │  │  build.rs
+│  │  │  Cargo.toml
+│  │  │
+│  │  ├─examples
+│  │  │      config.rs
+│  │  │      system_message.rs
+│  │  │      webrtc.rs
+│  │  │
+│  │  ├─protos
+│  │  │      message.proto
+│  │  │      rendezvous.proto
+│  │  │
+│  │  └─src
+│  │      │  bytes_codec.rs
+│  │      │  compress.rs
+│  │      │  config.rs
+│  │      │  fingerprint.rs
+│  │      │  fs.rs
+│  │      │  keyboard.rs
+│  │      │  lib.rs
+│  │      │  mem.rs
+│  │      │  password_security.rs
+│  │      │  proxy.rs
+│  │      │  socket_client.rs
+│  │      │  stream.rs
+│  │      │  tcp.rs
+│  │      │  tls.rs
+│  │      │  udp.rs
+│  │      │  verifier.rs
+│  │      │  webrtc.rs
+│  │      │  websocket.rs
+│  │      │
+│  │      ├─platform
+│  │      │      linux.rs
+│  │      │      macos.rs
+│  │      │      mod.rs
+│  │      │      windows.rs
+│  │      │
+│  │      └─protos
+│  │              mod.rs
+│  │
+│  ├─libxdo-sys-stub
+│  │  │  Cargo.toml
+│  │  │
+│  │  └─src
+│  │          lib.rs
+│  │
+│  ├─portable
+│  │  │  .gitignore
+│  │  │  build.rs
+│  │  │  Cargo.lock
+│  │  │  Cargo.toml
+│  │  │  generate.py
+│  │  │  requirements.txt
+│  │  │
+│  │  └─src
+│  │      │  bin_reader.rs
+│  │      │  main.rs
+│  │      │  ui.rs
+│  │      │
+│  │      └─res
+│  │              label.png
+│  │              spin.gif
+│  │
+│  ├─remote_printer
+│  │  │  Cargo.toml
+│  │  │
+│  │  └─src
+│  │      │  lib.rs
+│  │      │
+│  │      └─setup
+│  │              driver.rs
+│  │              mod.rs
+│  │              port.rs
+│  │              printer.rs
+│  │              setup.rs
+│  │
+│  ├─scrap
+│  │  │  .gitignore
+│  │  │  build.rs
+│  │  │  Cargo.toml
+│  │  │  README.md
+│  │  │
+│  │  ├─examples
+│  │  │      benchmark.rs
+│  │  │      capture_mag.rs
+│  │  │      ffplay.rs
+│  │  │      list.rs
+│  │  │      record-screen.rs
+│  │  │      screenshot.rs
+│  │  │
+│  │  └─src
+│  │      │  lib.rs
+│  │      │  wayland.rs
+│  │      │
+│  │      ├─android
+│  │      │      ffi.rs
+│  │      │      mod.rs
+│  │      │
+│  │      ├─bindings
+│  │      │      aom_ffi.h
+│  │      │      vpx_ffi.h
+│  │      │      yuv_ffi.h
+│  │      │
+│  │      ├─common
+│  │      │      android.rs
+│  │      │      aom.rs
+│  │      │      camera.rs
+│  │      │      codec.rs
+│  │      │      convert.rs
+│  │      │      dxgi.rs
+│  │      │      hwcodec.rs
+│  │      │      linux.rs
+│  │      │      mediacodec.rs
+│  │      │      mod.rs
+│  │      │      quartz.rs
+│  │      │      record.rs
+│  │      │      vpx.rs
+│  │      │      vpxcodec.rs
+│  │      │      vram.rs
+│  │      │      wayland.rs
+│  │      │      x11.rs
+│  │      │
+│  │      ├─dxgi
+│  │      │      gdi.rs
+│  │      │      mag.rs
+│  │      │      mod.rs
+│  │      │
+│  │      ├─quartz
+│  │      │      capturer.rs
+│  │      │      config.rs
+│  │      │      display.rs
+│  │      │      ffi.rs
+│  │      │      frame.rs
+│  │      │      mod.rs
+│  │      │
+│  │      ├─wayland
+│  │      │      capturable.rs
+│  │      │      display.rs
+│  │      │      pipewire.rs
+│  │      │      README.md
+│  │      │      remote_desktop_portal.rs
+│  │      │      request_portal.rs
+│  │      │      screencast_portal.rs
+│  │      │
+│  │      └─x11
+│  │              capturer.rs
+│  │              display.rs
+│  │              ffi.rs
+│  │              iter.rs
+│  │              mod.rs
+│  │              server.rs
+│  │
+│  └─virtual_display
+│      │  Cargo.lock
+│      │  Cargo.toml
+│      │  README.md
+│      │
+│      ├─dylib
+│      │  │  build.rs
+│      │  │  Cargo.toml
+│      │  │  README.md
+│      │  │
+│      │  ├─examples
+│      │  │      idd_controller.rs
+│      │  │
+│      │  └─src
+│      │      │  lib.rs
+│      │      │
+│      │      └─win10
+│      │              idd.rs
+│      │              IddController.c
+│      │              IddController.h
+│      │              mod.rs
+│      │              Public.h
+│      │
+│      ├─examples
+│      │      virtual_display_1.rs
+│      │
+│      └─src
+│              lib.rs
+│
+├─res
+│  │  128x128.png
+│  │  128x128@2x.png
+│  │  32x32.png
+│  │  64x64.png
+│  │  ab.py
+│  │  audits.py
+│  │  bump.sh
+│  │  design.svg
+│  │  device-groups.py
+│  │  devices.py
+│  │  gen_icon.sh
+│  │  icon.ico
+│  │  icon.png
+│  │  inline-sciter.py
+│  │  job.py
+│  │  lang.py
+│  │  logo-header.svg
+│  │  logo.svg
+│  │  mac-icon.png
+│  │  mac-tray-dark-x2.png
+│  │  mac-tray-light-x2.png
+│  │  manifest.xml
+│  │  osx-dist.sh
+│  │  pacman_install
+│  │  PKGBUILD
+│  │  rpm-flutter-suse.spec
+│  │  rpm-flutter.spec
+│  │  rpm-suse.spec
+│  │  rpm.spec
+│  │  rustdesk-banner.svg
+│  │  rustdesk-link.desktop
+│  │  rustdesk.desktop
+│  │  rustdesk.service
+│  │  scalable.svg
+│  │  startwm.sh
+│  │  strategies.py
+│  │  tray-icon.ico
+│  │  user-groups.py
+│  │  users.py
+│  │  xorg.conf
+│  │
+│  ├─DEBIAN
+│  │      postinst
+│  │      postrm
+│  │      preinst
+│  │      prerm
+│  │
+│  ├─fdroid
+│  │  └─patches
+│  │          0000-flutter-android-x86.patch
+│  │          0001-x86-no-debuggable.patch
+│  │
+│  ├─msi
+│  │  │  .gitignore
+│  │  │  msi.sln
+│  │  │  preprocess.py
+│  │  │  README.md
+│  │  │
+│  │  ├─CustomActions
+│  │  │      Common.h
+│  │  │      CustomActions.cpp
+│  │  │      CustomActions.def
+│  │  │      CustomActions.vcxproj
+│  │  │      DeviceUtils.cpp
+│  │  │      dllmain.cpp
+│  │  │      FirewallRules.cpp
+│  │  │      framework.h
+│  │  │      packages.config
+│  │  │      pch.cpp
+│  │  │      pch.h
+│  │  │      ReadConfig.cpp
+│  │  │      RemotePrinter.cpp
+│  │  │      ServiceUtils.cpp
+│  │  │
+│  │  └─Package
+│  │      │  Includes.wxi
+│  │      │  License.rtf
+│  │      │  Package.wixproj
+│  │      │  Package.wxs
+│  │      │
+│  │      ├─Components
+│  │      │      Folders.wxs
+│  │      │      Regs.wxs
+│  │      │      RustDesk.wxs
+│  │      │
+│  │      ├─Fragments
+│  │      │      AddRemoveProperties.wxs
+│  │      │      CustomActions.wxs
+│  │      │      ShortcutProperties.wxs
+│  │      │      Upgrades.wxs
+│  │      │
+│  │      ├─Language
+│  │      │      Package.en-us.wxl
+│  │      │      WixExt_en-us.wxl
+│  │      │
+│  │      └─UI
+│  │              AnotherApp.wxs
+│  │              MyInstallDirDlg.wxs
+│  │              MyInstallDlg.wxs
+│  │
+│  ├─pam.d
+│  │      rustdesk.debian
+│  │      rustdesk.suse
+│  │
+│  └─vcpkg
+│      ├─aom
+│      │      aom-avx2.diff
+│      │      aom-install.diff
+│      │      aom-uninitialized-pointer.diff
+│      │      portfile.cmake
+│      │      vcpkg.json
+│      │
+│      ├─ffmpeg
+│      │  │  0001-create-lib-libraries.patch
+│      │  │  0002-fix-msvc-link.patch
+│      │  │  0003-fix-windowsinclude.patch
+│      │  │  0004-dependencies.patch
+│      │  │  0005-fix-nasm.patch
+│      │  │  0007-fix-lib-naming.patch
+│      │  │  0013-define-WINVER.patch
+│      │  │  0020-fix-aarch64-libswscale.patch
+│      │  │  0024-fix-osx-host-c11.patch
+│      │  │  0040-ffmpeg-add-av_stream_get_first_dts-for-chromium.patch
+│      │  │  0041-add-const-for-opengl-definition.patch
+│      │  │  0042-fix-arm64-linux.patch
+│      │  │  0043-fix-miss-head.patch
+│      │  │  build.sh.in
+│      │  │  portfile.cmake
+│      │  │  vcpkg-cmake-wrapper.cmake
+│      │  │  vcpkg.json
+│      │  │
+│      │  └─patch
+│      │          0001-avcodec-amfenc-add-query_timeout-option-for-h264-hev.patch
+│      │          0002-libavcodec-amfenc-reconfig-when-bitrate-change.patch
+│      │          0004-videotoolbox-changing-bitrate.patch
+│      │          0005-mediacodec-changing-bitrate.patch
+│      │          0006-dlopen-libva.patch
+│      │          0007-fix-linux-configure.patch
+│      │          0008-remove-amf-loop-query.patch
+│      │          0009-fix-nvenc-reconfigure-blur.patch
+│      │          0010.disable-loading-DLLs-from-app-dir.patch
+│      │          0011-android-mediacodec-encode-align-64.patch
+│      │          0012-fix-macos-big-sur-CVBufferCopyAttachments.patch
+│      │
+│      ├─libvpx
+│      │      0003-add-uwp-v142-and-v143-support.patch
+│      │      0004-remove-library-suffixes.patch
+│      │      portfile.cmake
+│      │      unofficial-libvpx-config.cmake.in
+│      │      vcpkg.json
+│      │      vpx.pc.in
+│      │
+│      ├─libyuv
+│      │      fix-cmakelists.patch
+│      │      libyuv-config.cmake
+│      │      portfile.cmake
+│      │      usage
+│      │      usage-msvc
+│      │      vcpkg.json
+│      │
+│      ├─mfx-dispatch
+│      │      0003-upgrade-cmake-3.14.patch
+│      │      fix-pkgconf.patch
+│      │      fix-unresolved-symbol.patch
+│      │      portfile.cmake
+│      │      vcpkg.json
+│      │
+│      └─opus
+│              fix-pkgconfig-version.patch
+│              portfile.cmake
+│              vcpkg.json
+│
+└─src
+    │  auth_2fa.rs
+    │  cli.rs
+    │  client.rs
+    │  clipboard.rs
+    │  clipboard_file.rs
+    │  common.rs
+    │  core_main.rs
+    │  custom_server.rs
+    │  flutter.rs
+    │  flutter_ffi.rs
+    │  hbbs_http.rs
+    │  ipc.rs
+    │  kcp_stream.rs
+    │  keyboard.rs
+    │  lan.rs
+    │  lang.rs
+    │  lib.rs
+    │  main.rs
+    │  naming.rs
+    │  port_forward.rs
+    │  privacy_mode.rs
+    │  rendezvous_mediator.rs
+    │  server.rs
+    │  service.rs
+    │  tray.rs
+    │  ui.rs
+    │  ui_cm_interface.rs
+    │  ui_interface.rs
+    │  ui_session_interface.rs
+    │  updater.rs
+    │  virtual_display_manager.rs
+    │
+    ├─client
+    │      file_trait.rs
+    │      helper.rs
+    │      io_loop.rs
+    │      screenshot.rs
+    │
+    ├─hbbs_http
+    │      account.rs
+    │      downloader.rs
+    │      http_client.rs
+    │      record_upload.rs
+    │      sync.rs
+    │
+    ├─lang
+    │      ar.rs
+    │      be.rs
+    │      bg.rs
+    │      ca.rs
+    │      cn.rs
+    │      cs.rs
+    │      da.rs
+    │      de.rs
+    │      el.rs
+    │      en.rs
+    │      eo.rs
+    │      es.rs
+    │      et.rs
+    │      eu.rs
+    │      fa.rs
+    │      fi.rs
+    │      fr.rs
+    │      ge.rs
+    │      he.rs
+    │      hr.rs
+    │      hu.rs
+    │      id.rs
+    │      it.rs
+    │      ja.rs
+    │      ko.rs
+    │      kz.rs
+    │      lt.rs
+    │      lv.rs
+    │      nb.rs
+    │      nl.rs
+    │      pl.rs
+    │      ptbr.rs
+    │      pt_PT.rs
+    │      README.md
+    │      ro.rs
+    │      ru.rs
+    │      sc.rs
+    │      sk.rs
+    │      sl.rs
+    │      sq.rs
+    │      sr.rs
+    │      sv.rs
+    │      ta.rs
+    │      template.rs
+    │      th.rs
+    │      tr.rs
+    │      tw.rs
+    │      uk.rs
+    │      vi.rs
+    │
+    ├─platform
+    │  │  delegate.rs
+    │  │  gtk_sudo.rs
+    │  │  linux.rs
+    │  │  linux_desktop_manager.rs
+    │  │  macos.mm
+    │  │  macos.rs
+    │  │  mod.rs
+    │  │  windows.cc
+    │  │  windows.rs
+    │  │  windows_delete_test_cert.cc
+    │  │  win_device.rs
+    │  │
+    │  └─privileges_scripts
+    │          agent.plist
+    │          daemon.plist
+    │          install.scpt
+    │          uninstall.scpt
+    │          update.scpt
+    │
+    ├─plugin
+    │  │  callback_ext.rs
+    │  │  callback_msg.rs
+    │  │  config.rs
+    │  │  desc.rs
+    │  │  errno.rs
+    │  │  ipc.rs
+    │  │  manager.rs
+    │  │  mod.rs
+    │  │  native.rs
+    │  │  plog.rs
+    │  │  plugins.rs
+    │  │
+    │  └─native_handlers
+    │          macros.rs
+    │          mod.rs
+    │          session.rs
+    │          ui.rs
+    │
+    ├─privacy_mode
+    │      macos.rs
+    │      win_exclude_from_capture.rs
+    │      win_input.rs
+    │      win_mag.rs
+    │      win_topmost_window.rs
+    │      win_virtual_display.rs
+    │
+    ├─server
+    │      audio_service.rs
+    │      clipboard_service.rs
+    │      connection.rs
+    │      dbus.rs
+    │      display_service.rs
+    │      input_service.rs
+    │      portable_service.rs
+    │      printer_service.rs
+    │      rdp_input.rs
+    │      service.rs
+    │      terminal_helper.rs
+    │      terminal_service.rs
+    │      uinput.rs
+    │      video_qos.rs
+    │      video_service.rs
+    │      wayland.rs
+    │
+    ├─ui
+    │      ab.tis
+    │      chatbox.html
+    │      cm.css
+    │      cm.html
+    │      cm.rs
+    │      cm.tis
+    │      common.css
+    │      common.tis
+    │      file_transfer.css
+    │      file_transfer.tis
+    │      grid.tis
+    │      header.css
+    │      header.tis
+    │      index.css
+    │      index.html
+    │      index.tis
+    │      install.html
+    │      install.tis
+    │      msgbox.tis
+    │      port_forward.tis
+    │      printer.tis
+    │      remote.css
+    │      remote.html
+    │      remote.rs
+    │      remote.tis
+    │
+    └─whiteboard
+            client.rs
+            linux.rs
+            macos.rs
+            mod.rs
+            server.rs
+            windows.rs
+            win_linux.rs

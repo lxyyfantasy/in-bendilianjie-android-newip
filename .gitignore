@@ -1,0 +1,62 @@
+/build
+/target
+.vscode
+.idea
+.DS_Store
+.env
+libsciter-gtk.so
+src/ui/inline.rs
+extractor
+__pycache__
+src/version.rs
+*.dmg
+*.exe
+*.tgz
+cert.pfx
+*.bak
+sciter.dll
+**/*.pdb
+src/bridge_generated.rs
+src/bridge_generated.io.rs
+*.deb
+rustdesk
+*.cache
+# appimage
+appimage/AppDir
+appimage/*.AppImage
+appimage/appimage-build
+appimage/*.xz
+# flutter 编译缓存目录，不屏蔽源码res图片
+flutter/linux/build/**
+flutter/linux/cmake-build-debug/**
+# flatpak
+flatpak/.flatpak-builder/**
+flatpak/ccache/**
+flatpak/.flatpak-builder/build/**
+flatpak/.flatpak-builder/shared-modules/**
+flatpak/.flatpak-builder/shared-modules/*.tar.xz
+flatpak/.flatpak-builder/debian-binary
+flatpak/build/**
+flatpak/repo/**
+flatpak/*.flatpak
+# bridge 自动生成文件
+lib/generated_bridge.dart
+# vscode 远程容器缓存
+.gitconfig
+.vscode-server/
+.ssh
+.devcontainer/.*
+# examples 示例项目编译产物
+examples/**/target/
+# vcpkg 编译缓存
+vcpkg_installed
+flutter/lib/generated_plugin_registrant.dart
+libsciter.dylib
+flutter/web/build/**
+# 仅屏蔽构建输出目录里的图片，源码res、portable资源图片不忽略
+**/build/*.png
+**/build/*.jpg
+**/build/*.svg
+**/target/*.png
+**/target/*.jpg
+**/target/*.svg
