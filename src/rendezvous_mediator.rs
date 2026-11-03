@@ -774,9 +774,12 @@ impl RendezvousMediator {
         Ok(())
     }
 
-    fn get_relay_server(&self, _provided_by_rendezvous_server: String) -> String {
-        // 中继始终跟随当前 ID 服务器：ID 端口 +1
-        crate::increase_port(&self.host, 1)
+    fn get_relay_server(&self, provided_by_rendezvous_server: String) -> String {
+        if !provided_by_rendezvous_server.is_empty() {
+            provided_by_rendezvous_server
+        } else {
+            crate::increase_port(&self.host, 1)
+        }
     }
 }
 
