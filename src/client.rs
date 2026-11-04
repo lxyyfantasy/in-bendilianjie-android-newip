@@ -287,7 +287,11 @@ impl Client {
             (peer, "", key, token)
         };
         let (rendezvous_server, servers, contained) = if other_server.is_empty() {
-            crate::get_rendezvous_server(1_000).await
+            let ip = crate::common::get_peer_server_ip(peer).await;
+            if ip.is_empty() {
+                bail!("Failed to get server ip for id {}", peer);
+            }
+            (check_port(ip, RENDEZVOUS_PORT), Vec::new(), true)
         } else {
             if other_server == PUBLIC_SERVER {
                 (

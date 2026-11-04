@@ -1185,7 +1185,30 @@ impl Config {
                 "{},{}",
                 PRIMARY_RENDEZVOUS_SERVER, SECONDARY_RENDEZVOUS_SERVER
             ),
-            "api-server" => format!("http://{}:23399", PRIMARY_RENDEZVOUS_SERVER),
+            "api-server" => {
+                let v = get_or(
+                    &OVERWRITE_SETTINGS,
+                    &CONFIG2.read().unwrap().options,
+                    &DEFAULT_SETTINGS,
+                    "api-server",
+                )
+                .unwrap_or_default();
+                if !v.is_empty() {
+                    return v;
+                }
+                let primary = get_or(
+                    &OVERWRITE_SETTINGS,
+                    &CONFIG2.read().unwrap().options,
+                    &DEFAULT_SETTINGS,
+                    EXTERNAL_PRIMARY_SERVER,
+                )
+                .unwrap_or_default();
+                if !primary.is_empty() {
+                    format!("http://{}:23399", primary)
+                } else {
+                    format!("http://{}:23399", PRIMARY_RENDEZVOUS_SERVER)
+                }
+            }
             _ => get_or(
                 &OVERWRITE_SETTINGS,
                 &CONFIG2.read().unwrap().options,

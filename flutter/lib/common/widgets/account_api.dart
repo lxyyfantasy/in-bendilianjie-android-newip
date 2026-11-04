@@ -112,6 +112,22 @@ class AccountApi {
     }
   }
 
+  static Future<bool> probeServerConfig(String ip) async {
+    try {
+      final resp = await http
+          .get(
+            Uri.parse('http://$ip:23399/api/server-config'),
+            headers: _headers(),
+          )
+          .timeout(_timeout);
+      if (resp.statusCode != 200) return false;
+      final data = jsonDecode(resp.body);
+      return data is Map<String, dynamic> && data.containsKey('server_key');
+    } catch (_) {
+      return false;
+    }
+  }
+
   static AccountApiResult _parse(http.Response resp) {
     try {
       final data = jsonDecode(resp.body);
