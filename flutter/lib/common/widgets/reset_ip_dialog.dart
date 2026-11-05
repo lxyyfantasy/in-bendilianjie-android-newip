@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hbb/common.dart';
 import 'package:flutter_hbb/common/widgets/account_api.dart';
 import 'package:flutter_hbb/common/widgets/dialog.dart';
+import 'package:flutter_hbb/generated_bridge.dart';
 
 Future<void> resetIpDialog(OverlayDialogManager dialogManager) async {
   final ipCtrl = TextEditingController();
