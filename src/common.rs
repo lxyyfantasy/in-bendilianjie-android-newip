@@ -1314,6 +1314,66 @@ pub async fn post_request_sync(url: String, body: String, header: &str) -> Resul
     post_request(url, body, header).await
 }
 
+#[tokio::main(flavor = "current_thread")]
+pub async fn http_request_sync(
+    url: String,
+    method: String,
+    body: Option<String>,
+    header: String,
+) -> ResultType<String> {
+    match http_request_sync_inner(url.clone(), method.clone(), body.clone(), header.clone()).await {
+        Ok(v) => Ok(v),
+        Err(e) => {
+            if let Some(fallback_url) = get_api_server_fallback(&url) {
+                log::warn!("HTTP request to {} failed: {}, retry with {}", url, e, fallback_url);
+                http_request_sync_inner(fallback_url, method, body, header).await
+            } else {
+                Err(e)
+            }
+        }
+    }
+}
+
+async fn http_request_sync_inner(
+    url: String,
+    method: String,
+    body: Option<String>,
+    header: String,
+) -> ResultType<String> {
+    let proxy_conf = Config::get_socks();
+    let tls_url = get_url_for_tls(&url, &proxy_conf);
+    let tls_type = get_cached_tls_type(tls_url);
+    let danger_accept_invalid_cert = get_cached_tls_accept_invalid_cert(tls_url);
+    let response = get_http_response_async(
+        &url,
+        tls_url,
+        &method,
+        body.clone(),
+        &header,
+        tls_type,
+        danger_accept_invalid_cert,
+        danger_accept_invalid_cert,
+    )
+    .await?;
+    let mut response_headers = serde_json::map::Map::new();
+    for (key, value) in response.headers() {
+        response_headers.insert(
+            key.to_string(),
+            serde_json::json!(value.to_str().unwrap_or("")),
+        );
+    }
+    let status_code = response.status().as_u16();
+    let response_body = response.text().await?;
+    let mut result = serde_json::map::Map::new();
+    result.insert("status_code".to_string(), serde_json::json!(status_code));
+    result.insert(
+        "headers".to_string(),
+        serde_json::Value::Object(response_headers),
+    );
+    result.insert("body".to_string(), serde_json::json!(response_body));
+    serde_json::to_string(&result).map_err(|e| anyhow!("Failed to serialize response: {}", e))
+}
+
 #[async_recursion]
 async fn get_http_response_async(
     url: &str,
