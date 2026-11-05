@@ -18,6 +18,7 @@ use hbb_common::{
     bytes::Bytes,
     config::{
         self, keys, use_ws, Config, LocalConfig, CONNECT_TIMEOUT, READ_TIMEOUT, RENDEZVOUS_PORT,
+        EXTERNAL_PRIMARY_SERVER, EXTERNAL_SECONDARY_SERVER,
     },
     futures::future::join_all,
     futures_util::future::poll_fn,
