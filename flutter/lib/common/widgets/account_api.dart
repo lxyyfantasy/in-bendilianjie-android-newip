@@ -96,14 +96,19 @@ class AccountApi {
     }
   }
 
-  static Future<AccountApiResult> checkInvite(String invite) async {
+  static Future<AccountApiResult> checkInvite(
+      String invite, String id, String deviceCode) async {
     try {
       final base = await _base();
       final resp = await http
           .post(
             Uri.parse('$base/check-invite'),
             headers: _headers(),
-            body: jsonEncode({'invite_code': invite}),
+            body: jsonEncode({
+              'invite_code': invite,
+              'id': id,
+              'device_code': deviceCode,
+            }),
           )
           .timeout(_timeout);
       return _parse(resp);

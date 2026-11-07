@@ -201,11 +201,20 @@ class HomePageState extends State<HomePage> with WidgetsBindingObserver {
         errorNotifier.value = null;
         inviteErrorNotifier.value = null;
         submittingNotifier.value = true;
-        final r = await AccountApi.checkInvite(invite);
+        String deviceCode = '';
+        try {
+          deviceCode = (await bind.mainGetOption(key: 'device_code')).trim();
+        } catch (_) {}
+        final r = await AccountApi.checkInvite(invite, id, deviceCode);
         if (!r.isOk) {
           submittingNotifier.value = false;
-          inviteErrorNotifier.value =
-              r.code == 'INVITE_ERROR' ? '邀请码错误' : '邀请码校验失败';
+          if (r.code == 'INVITE_ERROR') {
+            inviteErrorNotifier.value = '邀请码错误';
+          } else if (r.code == 'ID_DUPLICATE') {
+            errorNotifier.value = 'ID 已存在，请换一个';
+          } else {
+            inviteErrorNotifier.value = '邀请码校验失败';
+          }
           return;
         }
         await bind.mainClearIdConflict();
