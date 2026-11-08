@@ -42,4 +42,16 @@ class RdPlatformChannel {
     assert(isMacOS);
     return _hostMethodChannel.invokeMethod("terminate");
   }
+
+  final MethodChannel _mainChannel = MethodChannel("mChannel");
+
+  Future<String> getAndroidId() async {
+    try {
+      final result = await _mainChannel.invokeMethod<String>("getAndroidId");
+      return result ?? '';
+    } catch (_) {
+      return '';
+    }
+  }
 }
+

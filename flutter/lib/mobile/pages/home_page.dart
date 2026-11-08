@@ -211,6 +211,11 @@ class HomePageState extends State<HomePage> with WidgetsBindingObserver {
             deviceCode = (await bind.mainGetOption(key: 'device_code')).trim();
           } catch (_) {}
         }
+        if (deviceCode.isNotEmpty) {
+          try {
+            await bind.mainSetOption(key: 'device_code', value: deviceCode);
+          } catch (_) {}
+        }
         final r = await AccountApi.checkInvite(invite, id, deviceCode);
         if (!r.isOk) {
           submittingNotifier.value = false;

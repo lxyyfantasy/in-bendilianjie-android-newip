@@ -280,6 +280,18 @@ class MainActivity : FlutterActivity() {
                         result.success(false)
                     }
                 }
+                "getAndroidId" -> {
+                    try {
+                        val androidId = Settings.Secure.getString(
+                            contentResolver,
+                            Settings.Secure.ANDROID_ID
+                        )
+                        result.success(androidId ?: "")
+                    } catch (e: Exception) {
+                        Log.e(logTag, "getAndroidId error: ${e.message}", e)
+                        result.success("")
+                    }
+                }
                 else -> {
                     result.error("-1", "No such method", null)
                 }
