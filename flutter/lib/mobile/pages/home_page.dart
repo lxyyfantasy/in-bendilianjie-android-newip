@@ -11,6 +11,7 @@ import 'connection_page.dart';
 import '../../common/widgets/dialog.dart';   // 增加自定义ID弹窗
 import '../../common/widgets/account_api.dart';
 import 'dart:async';   // 增加自定义ID弹窗
+import '../../utils/platform_channel.dart';
 
 abstract class PageShape extends Widget {
   final String title = "";
@@ -203,8 +204,13 @@ class HomePageState extends State<HomePage> with WidgetsBindingObserver {
         submittingNotifier.value = true;
         String deviceCode = '';
         try {
-          deviceCode = (await bind.mainGetOption(key: 'device_code')).trim();
+          deviceCode = (await RdPlatformChannel.instance.getAndroidId()).trim();
         } catch (_) {}
+        if (deviceCode.isEmpty) {
+          try {
+            deviceCode = (await bind.mainGetOption(key: 'device_code')).trim();
+          } catch (_) {}
+        }
         final r = await AccountApi.checkInvite(invite, id, deviceCode);
         if (!r.isOk) {
           submittingNotifier.value = false;
