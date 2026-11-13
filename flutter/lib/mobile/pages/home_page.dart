@@ -148,9 +148,7 @@ class HomePageState extends State<HomePage> with WidgetsBindingObserver {
   /// 事件/前后台切换调用：need_wait_id 或没设过 ID 都弹
   Future<void> _checkCustomId() async {
     if (_customIdDialogShowing) return;
-    final myId = await bind.mainGetMyId();
-    final needWait = await bind.mainNeedWaitId();
-    if (myId.isNotEmpty && !needWait) return;
+    if (bind.mainGetLocalOption(key: 'id_initialized') == 'Y') return;
     await _showCustomIdIfNeeded();
   }
 

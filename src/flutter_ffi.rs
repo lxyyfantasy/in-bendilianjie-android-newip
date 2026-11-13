@@ -81,18 +81,6 @@ fn initialize(app_dir: &str, custom_client_config: &str) {
         // core_main's init_log does not work for flutter since it is only applied to its load_library in main.c
         hbb_common::init_log(false, "flutter_ffi");
     }
-    // 启动时恢复冲突/等待状态：只认持久化的 need-wait-id=Y
-    // 正常注册成功的设备 id-registered=Y，不进入等待状态
-    let need_wait = hbb_common::config::LocalConfig::get_option("need-wait-id") == "Y";
-    let registered = hbb_common::config::LocalConfig::get_option("id-registered") == "Y";
-    hbb_common::config::NEED_WAIT_ID.store(
-        need_wait && !registered,
-        std::sync::atomic::Ordering::SeqCst,
-    );
-    hbb_common::config::ID_REGISTERED.store(
-        registered,
-        std::sync::atomic::Ordering::SeqCst,
-    );
 }
 
 #[inline]
@@ -163,6 +151,7 @@ pub fn main_set_custom_id(id: String) {
     main_set_id_registered(false);
     hbb_common::config::NEED_WAIT_ID.store(false, std::sync::atomic::Ordering::SeqCst);
     hbb_common::config::LocalConfig::set_option("need-wait-id".into(), "".into());
+    hbb_common::config::LocalConfig::set_option("id_initialized".into(), "Y".into());
     hbb_common::config::ID_READY.notify_one();
 }
 
