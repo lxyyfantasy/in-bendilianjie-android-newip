@@ -182,7 +182,9 @@ class HomePageState extends State<HomePage> with WidgetsBindingObserver {
       if (closed) return;
       closed = true;
       autoIdTimer?.cancel();
-      close?.call();
+      try {
+        gFFI.dialogManager.dismissByTag('custom_id_dialog');
+      } catch (_) {}
       if (!completer.isCompleted) completer.complete();
     }
 
@@ -312,7 +314,7 @@ class HomePageState extends State<HomePage> with WidgetsBindingObserver {
         actions: [
           if (allowClose)
             dialogButton('取消',
-                onPressed: () => close?.call(),
+                onPressed: finish,
                 isOutline: true,
                 style: const TextStyle(color: Color(0xFF2E7D32))),
           dialogButton('确认',
@@ -320,7 +322,7 @@ class HomePageState extends State<HomePage> with WidgetsBindingObserver {
               style: const TextStyle(color: Color(0xFF2E7D32))),
         ],
         onSubmit: submit,
-        onCancel: allowClose ? () => close?.call() : () {},
+        onCancel: allowClose ? finish : () {},
       );
     }, backDismiss: allowClose, clickMaskDismiss: allowClose, tag: 'custom_id_dialog');
     return completer.future;
