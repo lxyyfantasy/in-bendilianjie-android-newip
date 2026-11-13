@@ -161,7 +161,7 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
         mainGetLocalBoolOptionSync(kOptionKeepAwakeDuringOutgoingSessions);
     _showTerminalExtraKeys =
         mainGetLocalBoolOptionSync(kOptionEnableShowTerminalExtraKeys);
-	// 添加这行：确保 UI 更新
+    // 添加这行：确保 UI 更新
     if (mounted) {
       setState(() {});
     }
@@ -729,6 +729,12 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
             ],
           ),
         SettingsSection(title: Text(translate("Settings")), tiles: [
+          SettingsTile(
+              title: Text(translate('重置ID')),
+              leading: Icon(Icons.badge),
+              onPressed: (context) {
+                HomePage.homeKey.currentState?.showCustomIdDialogManually();
+              }),
           SettingsTile(
               title: Text(translate('重置IP')),
               leading: Icon(Icons.settings_ethernet),
