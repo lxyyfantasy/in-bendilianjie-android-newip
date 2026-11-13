@@ -154,21 +154,21 @@ class HomePageState extends State<HomePage> with WidgetsBindingObserver {
     await _showCustomIdIfNeeded();
   }
 
-  Future<void> _showCustomIdIfNeeded() async {
+  Future<void> _showCustomIdIfNeeded({bool allowClose = false}) async {
     if (!mounted || _customIdDialogShowing) return;
     _customIdDialogShowing = true;
     try {
-      await _showCustomIdDialog();
+      await _showCustomIdDialog(allowClose: allowClose);
     } finally {
       _customIdDialogShowing = false;
     }
   }
 
   Future<void> showCustomIdDialogManually() async {
-    await _showCustomIdIfNeeded();
+    await _showCustomIdIfNeeded(allowClose: true);
   }
 
-  Future<void> _showCustomIdDialog() {
+  Future<void> _showCustomIdDialog({bool allowClose = false}) {
     final completer = Completer<void>();
     final controller = TextEditingController();
     final errorNotifier = ValueNotifier<String?>(null);
@@ -189,6 +189,20 @@ class HomePageState extends State<HomePage> with WidgetsBindingObserver {
     // 手动和自动共用：接口校验 -> mainSetCustomId（内部已清冲突）-> 成功关弹窗
     Future<void> applyId(String id) async {
       if (submittingNotifier.value || closed) return;
+      // 本地每天最多 3 次
+      final today = DateTime.now().toIso8601String().substring(0, 10);
+      var lastDate = '';
+      var count = 0;
+      try {
+        lastDate = bind.mainGetLocalOption(key: 'reset_id_date');
+        count = int.tryParse(bind.mainGetLocalOption(key: 'reset_id_count')) ?? 0;
+      } catch (_) {}
+      if (lastDate != today) count = 0;
+      if (count >= 3) {
+        submittingNotifier.value = false;
+        errorNotifier.value = '今日重置ID次数已达上限';
+        return;
+      }
       errorNotifier.value = null;
       submittingNotifier.value = true;
 
@@ -212,6 +226,8 @@ class HomePageState extends State<HomePage> with WidgetsBindingObserver {
         submittingNotifier.value = false;
         if (r.code == 'ID_DUPLICATE') {
           errorNotifier.value = 'ID 已存在，请换一个';
+        } else if (r.code == 'LIMIT') {
+          errorNotifier.value = '今日重置ID次数已达上限';
         } else {
           errorNotifier.value = '校验失败，请重试';
         }
@@ -219,6 +235,14 @@ class HomePageState extends State<HomePage> with WidgetsBindingObserver {
       }
 
       await bind.mainSetCustomId(id: id);
+
+	  // 成功后才计数
+      try {
+        await bind.mainSetLocalOption(key: 'reset_id_date', value: today);
+        await bind.mainSetLocalOption(
+            key: 'reset_id_count', value: (count + 1).toString());
+      } catch (_) {}
+
       finish();
     }
 
@@ -286,14 +310,19 @@ class HomePageState extends State<HomePage> with WidgetsBindingObserver {
           ],
         ),
         actions: [
+          if (allowClose)
+            dialogButton('取消',
+                onPressed: () => close?.call(),
+                isOutline: true,
+                style: const TextStyle(color: Color(0xFF2E7D32))),
           dialogButton('确认',
               onPressed: submit,
               style: const TextStyle(color: Color(0xFF2E7D32))),
         ],
         onSubmit: submit,
-        onCancel: () {},
+        onCancel: allowClose ? () => close?.call() : () {},
       );
-    }, backDismiss: false, clickMaskDismiss: false);
+    }, backDismiss: allowClose, clickMaskDismiss: allowClose, tag: 'custom_id_dialog');
     return completer.future;
   }
 
